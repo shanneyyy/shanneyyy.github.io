@@ -1,0 +1,471 @@
+@font-face {
+  font-family: "CD";
+  src: url("./ClashDisplay_Complete/ClashDisplay_Complete/Fonts/Variable/ClashDisplay-Variable.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Panchang";
+  src: url("./Panchang_Complete/Panchang_Complete/Fonts/Variable/Panchang-Variable.ttf")
+    format(truetype);
+}
+
+* {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "CD" !important;
+  box-sizing: border-box;
+  scroll-behavior: smooth !important;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --dark: #181818;
+  --light: #f0f0f0;
+  --main: #a855f7;
+  --hover: rgba(168, 85, 247, 0.6);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#wrapper {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+
+.container {
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.inner-container {
+  width: 80vw;
+  height: auto;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+/* Globals */
+
+.heading {
+  font-size: 50px;
+  font-weight: 600 !important;
+  color: var(--main);
+  font-family: "Panchang" !important;
+}
+
+#navbar {
+  width: 100vw;
+  height: auto;
+  display: grid;
+  place-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999 !important;
+  background-color: var(--white);
+}
+
+#inner-navbar {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 0 2rem;
+  height: 8rem;
+}
+
+.logo {
+  font-size: 20px;
+  font-family: "Panchang" !important;
+  font-weight: 700;
+  color: var(--main);
+}
+
+.navbar-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar-list li .navbar-link {
+  margin-left: 4rem;
+  text-decoration: none;
+  color: var(--dark);
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  padding: 0 1rem;
+  font-size: 14px;
+  font-family: "Panchang" !important;
+}
+
+.navbar-list li .navbar-link::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--dark);
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  right: 0;
+  transition: width 0.25s ease-in-out;
+}
+
+.navbar-list li .navbar-link:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* Home Page View */
+
+#home-page-view {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 5rem;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.hello {
+  font-family: "Panchang" !important;
+  font-variant: small-caps;
+  display: block;
+}
+
+#name {
+  font-family: "Panchang" !important;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+#name b {
+  font-family: "Panchang" !important;
+  color: var(--main);
+}
+
+#tagline {
+  font-size: 22px;
+}
+
+#hire-a {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  background-color: var(--main);
+  color: var(--light);
+  border-radius: 40px;
+  transition: all 0.25s ease-in-out;
+}
+
+#hire-a:hover {
+  background-color: var(--hover);
+}
+
+#hpv-right-side {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+#self-bg {
+  position: absolute;
+  transform: rotate(90deg);
+}
+
+#self {
+  width: auto;
+  filter: drop-shadow(20px 0px 0 rgba(0, 0, 0, 0.2));
+}
+
+/* About */
+
+#about-page-view {
+  height: 100vh;
+}
+
+.about-me {
+  font-size: 40px;
+}
+
+.about-me strong {
+  color: var(--white);
+  font-weight: 400;
+  padding: 0 1rem;
+  background-color: var(--dark);
+}
+
+/* Project */
+
+#project-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 2rem;
+  margin-top: 2rem;
+}
+
+#project-list .project-list-container {
+  padding: 2rem;
+  background-color: var(--light);
+  min-height: 280px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+}
+
+#project-list .project-list-container:nth-child(1) {
+  grid-area: 1 / 1 / 4 / 4;
+}
+#project-list .project-list-container:nth-child(2) {
+  grid-area: 4 / 1 / 7 / 4;
+}
+#project-list .project-list-container:nth-child(3) {
+  grid-area: 1 / 4 / 7 / 6;
+}
+
+.project-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.project-details {
+  font-size: 20px;
+}
+
+/* Contact */
+
+#contact-page-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+.input-field {
+  padding: 1rem 2rem;
+  border: 2px solid var(--light);
+  border-radius: 10px;
+  resize: none;
+}
+
+#send {
+  padding: 1rem 2rem;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: var(--main);
+  color: var(--white);
+  border: 0;
+  margin-top: 2rem;
+}
+
+#contact-row {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  grid-gap: 5rem;
+}
+
+.contact-detail {
+  position: relative;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  filter: grayscale(1);
+  opacity: 0.1;
+}
+
+.cdetail {
+  display: flex;
+  flex-direction: space-between;
+  width: 100%;
+}
+
+.cdetail span {
+  font-family: "Panchang" !important;
+  font-weight: 600;
+}
+
+.cdetail span:nth-child(1) {
+  margin-right: auto !important;
+}
+
+#getintouch {
+  font-family: "Panchang" !important;
+  font-size: 60px;
+  color: var(--main);
+}
+
+/* Footer */
+
+footer {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: auto;
+}
+
+.inner-footer {
+  width: 76vw;
+  margin: 0 auto;
+  padding: 0;
+  padding: 5rem 0;
+}
+
+.inner-footer span {
+  font-family: "Panchang" !important;
+}
+
+#menu {
+  display: none;
+}
+
+/* Mobileeee */
+
+@media screen and (max-width: 768px) {
+  .heading {
+    font-size: 40px;
+  }
+
+  #home-page-view {
+    grid-template-columns: 1fr !important;
+  }
+
+  #hpv-right-side {
+    display: none;
+  }
+
+  #navbar {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  }
+
+  #name {
+    font-size: 45px;
+  }
+
+  .inner-container {
+    width: 100vw;
+    height: auto;
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+  }
+
+  #inner-navbar {
+    width: 100vw;
+    height: 5rem !important;
+  }
+
+  #menu {
+    display: grid;
+    height: 1rem;
+    width: 2.5rem;
+    background-color: transparent;
+    border: 0;
+
+    &:focus ~ .navbar-list {
+      right: 0;
+    }
+  }
+
+  #about-page-view {
+    height: 100% !important;
+  }
+
+  .menu-span {
+    display: block;
+    background-color: var(--dark);
+    height: 2px;
+    width: 100%;
+  }
+
+  .navbar-list {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--light);
+    top: 0;
+    right: -100vw;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.25s ease-in-out;
+  }
+
+  .navbar-list li {
+    margin: 0;
+    margin-bottom: 3rem;
+  }
+
+  .navbar-list li .navbar-link {
+    margin: 0 !important;
+  }
+
+  #project-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100% !important;
+  }
+
+  #project-list .project-list-container {
+    grid-auto-flow: row !important;
+    grid-area: auto !important;
+    min-height: 0 !important;
+    height: fit-content;
+  }
+
+  #message-form {
+    width: 100%;
+  }
+
+  .input-container {
+    width: 90% !important;
+  }
+
+  #contact-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  #map {
+    width: 90% !important;
+  }
+
+  .cdetail {
+    font-size: 13px;
+  }
+
+  .inner-footer span {
+    font-size: 12px;
+  }
+}
